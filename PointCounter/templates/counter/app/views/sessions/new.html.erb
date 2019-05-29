@@ -1,0 +1,20 @@
+<% provide(:title, "Log in") %>
+<h1>登录</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(:session, url: login_path) do |f| %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.label :password %>
+      <%= link_to "(忘记密码)", new_password_reset_path  %>
+      <%= f.password_field :password, class: 'form-control' %>
+
+      <%= f.submit "登录", class: "btn btn-primary" %>
+    <% end %>
+
+    <p>还没有账户?点击 <%= link_to "这里", signup_path %>立即注册！</p>
+  </div>
+</div>
